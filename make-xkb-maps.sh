@@ -33,7 +33,7 @@ for geometry in $GEOMETRY_LIST; do
   for keymap in $KEYMAP_LIST; do
     # run $keymap through xargs to parse the embedded spaces
     echo $keymap |\
-    xargs setxkbmap -geometry $geometry -print |\
+    xargs setxkbmap -geometry keyboardio_vndr/$geometry -print |\
     xkbcomp - - |\
     xkbprint -color -pict all -label symbols -lc $XKBPRINT_LOCALE - - |\
     ps2pdf - > $geometry-$keymap.pdf
