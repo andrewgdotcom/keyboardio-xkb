@@ -8,8 +8,10 @@
 IFS=:
 
 # See https://github.com/andrewgdotcom/keyboardio-xkb/geometry/ for 
-# files that can be used with this script. These files should be copied
-# (or better yet, soft linked!) into /usr/share/X11/xkb/geometry/
+# files that can be used with this script. This directory should be
+# soft linked under /usr/share/X11/xkb/geometry/ :
+#
+# ln -s $GIT_PATH/geometry /usr/share/X11/xkb/geometry/keyboardio_vndr
 #
 GEOMETRY_LIST="keyboardio:keyboardio-abg"
 
