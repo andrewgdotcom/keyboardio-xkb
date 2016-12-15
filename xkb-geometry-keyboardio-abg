@@ -1,0 +1,189 @@
+default xkb_geometry "keyboardio" {
+
+    // This is an approximate layout for a Keyboardio Model01 keyboard.
+    // Very crude rendering due to xkb only understanding rectangles.
+    // By andrewg@andrewg.com, based on the Kinesis geometry file.
+
+    description= "Keyboardio Model01";
+    width= 341;
+    height= 210;
+
+    shape.cornerRadius= 1;
+    shape "NORM" { { [ 18,18] }, { [2,1], [16,17] } };
+    shape "WIDE" { { [ 21,18] }, { [2,1], [19,17] } };
+    shape "TALL" { { [ 18,23] }, { [2,1], [16,22] } };
+    shape "PALM" { cornerRadius=10, { [ 22,28 ] }, { [1,1], [21,27] } };
+    shape "EDGE" { cornerRadius=150, { [ 341, 210 ] } };
+
+    outline "Edges" {
+	top= 0;
+	left= 0;
+	shape= "EDGE";
+    };
+
+    row.vertical= True;
+    row.top= 1;
+    key.gap= 0.5;
+
+//--------------------------------------------------------------------//
+
+    section "LeftAlpha" {
+	top=  0;
+	left= 36;
+	angle= 20;
+	row {
+	    top= 12;
+	    left= 5;
+	    keys { <AE01>, <TLDE>, <BKSL>, <LSGT> };
+	};
+	row {
+	    top= 12;
+	    left= 24;
+	    keys { <AE02>, <AD01>, { <AC01>, color="grey20" }, <AB01> };
+	};
+	row {
+		top= 3;
+	    left= 43;
+	    keys { <AE03>, <AD02>, { <AC02>, color="grey20" }, <AB02> };
+	};
+	row {
+	    top= -1;
+	    left= 62;
+	    keys { <AE04>, <AD03>, { <AC03>, color="grey20" }, <AB03> };
+	};
+	row {
+	    left= 81;
+	    keys { <AE05>, <AD04>, { <AC04>, color="grey20" }, <AB04> };
+	};
+	row {
+	    top= 4;
+	    left= 100;
+	    keys { <AE06>, <AD05>, <AC05>, <AB05> };
+	};
+	row {
+	    top= 14;
+	    left= 119;
+	    keys { {<PROG> ,"TALL"}, {<TAB> ,"TALL"}, {<ESC>, "TALL"} };
+	};
+    }; // End of "LeftAlpha" section
+
+    section "RightAlpha" {
+	top= 41;
+	left= 190;
+	angle= -20;
+	row {
+	    top= 14;
+	    left= -17;
+	    keys { {<PROG> ,"TALL"}, {<RTRN> ,"TALL"}, {<MENU>, "TALL"} };
+	};
+	row {
+	    top= 4;
+	    left= 2;
+	    keys { <AE07>, <AD06>, <AC06>, <AB06> };
+	};
+	row {
+	    left= 21;
+	    keys { <AE08>, <AD07>, { <AC07>, color="grey20" }, <AB07> };
+	};
+    	row {
+	    top= -1;
+	    left= 40;
+	    keys { <AE09>, <AD08>, { <AC08>, color="grey20" }, <AB08> };
+	};
+	row {
+		top= 3;
+	    left= 59;
+	    keys { <AE10>, <AD09>, { <AC09>, color="grey20" }, <AB09> };
+	};
+	row {
+	    top= 12;
+	    left= 78;
+	    keys { <AE11>, <AD10>, { <AC10>, color="grey20" }, <AB10> };
+	};
+	row {
+	    top= 12;
+	    left= 97;
+	    keys { <AE12>, <AD11>, <AC11>, <AD12> };
+	};
+	overlay "KPAD" {
+	    <AE07>=<NMLK>, <AE08>=<KPEQ>, <AE09>=<KPSL>, <AE10>=<KPMU>,
+	    <AD07>=<KP7>,  <AD08>=<KP8>,  <AD09>=<KP9>,  <AD10>=<KPSU>,
+	    <AC07>=<KP4>,  <AC08>=<KP5>, <AC09>=<KP6>,  <AC10>=<KPAD>,
+	    <AB07>=<KP1>,  <AB08>=<KP2>, <AB09>=<KP3>,  <AB10>=<KPEN>
+	};
+    }; // End of "RightAlpha" section
+
+//--------------------------------------------------------------------//
+
+    section "LeftMods" {
+	top= 121;
+	left= 118;
+	angle= 40;
+	row {
+	    left= -21;
+	    keys { <LCTL> };
+	};
+	row {
+	    left= -2;
+	    keys { <BKSP> };
+	};
+	row {
+	    left= 17;
+	    keys { <LFSH> };
+	};
+	row {
+	    left= 36;
+	    keys { <LALT> };
+	};
+    }; // End of "LeftMods" section
+
+    section "RightMods" {
+	top= 120;
+	left= 222;
+	angle= -40;
+	row {
+	    left= -55;
+	    keys { <RALT> };
+	};
+	row {
+	    left= -36;
+	    keys { <RTSH> };
+	};
+	row {
+	    left= -17;
+	    keys { <SPCE> };
+	};
+	row {
+	    left= 2;
+	    keys { <RCTL> };
+	};
+	overlay "KPAD" {
+	    <SPCE>= <KP0>, <RCTL>=<KPDL>
+	};
+    }; // End of "RightMods" section
+
+//--------------------------------------------------------------------//
+
+    section "LeftPalm" {
+	top= 161;
+	left= 99;
+	angle= 40;
+	row {
+	    keys { { <PROG>, "PALM" }  };
+	};
+    }; // End of "LeftPalm" section
+    
+    section "RightPalm" {
+	top= 175;
+	left= 223;
+	angle= -40;
+	row {
+	    keys { { <PROG>, "PALM" }  };
+	};
+    }; // End of "RightPalm" section
+    
+//--------------------------------------------------------------------//
+
+    alias <AC00> = <CAPS>;
+    alias <AA00> = <LCTL>;
+};
