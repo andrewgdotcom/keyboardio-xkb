@@ -1,6 +1,9 @@
 default xkb_geometry "keyboardio" {
 
     // This is an approximate layout for a Keyboardio Model01 keyboard.
+    // The scancode arrangement here is as per ABG's proposed default
+    // layer for multilingual use.
+    
     // Very crude rendering due to xkb only understanding rectangles.
     // By andrewg@andrewg.com, based on the Kinesis geometry file.
 
@@ -42,7 +45,7 @@ default xkb_geometry "keyboardio" {
 	    keys { <AE02>, <AD01>, { <AC01>, color="grey20" }, <AB01> };
 	};
 	row {
-		top= 3;
+	    top= 3;
 	    left= 43;
 	    keys { <AE03>, <AD02>, { <AC02>, color="grey20" }, <AB02> };
 	};
@@ -85,13 +88,13 @@ default xkb_geometry "keyboardio" {
 	    left= 21;
 	    keys { <AE08>, <AD07>, { <AC07>, color="grey20" }, <AB07> };
 	};
-    	row {
+    row {
 	    top= -1;
 	    left= 40;
 	    keys { <AE09>, <AD08>, { <AC08>, color="grey20" }, <AB08> };
 	};
 	row {
-		top= 3;
+	    top= 3;
 	    left= 59;
 	    keys { <AE10>, <AD09>, { <AC09>, color="grey20" }, <AB09> };
 	};
