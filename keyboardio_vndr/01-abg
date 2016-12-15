@@ -16,7 +16,7 @@ default xkb_geometry "keyboardio" {
     shape "WIDE" { { [ 21,18] }, { [2,1], [19,17] } };
     shape "TALL" { { [ 18,23] }, { [2,1], [16,22] } };
     shape "PALM" { cornerRadius=10, { [ 22,28 ] }, { [1,1], [21,27] } };
-    shape "EDGE" { cornerRadius=150, { [ 341, 210 ] } };
+    shape "EDGE" { cornerRadius=50, { [ 341, 210 ] } };
 
     outline "Edges" {
 	top= 0;
@@ -77,7 +77,7 @@ default xkb_geometry "keyboardio" {
 	row {
 	    top= 14;
 	    left= -17;
-	    keys { {<PROG> ,"TALL"}, {<RTRN> ,"TALL"}, {<MENU>, "TALL"} };
+	    keys { {<PROG> ,"TALL"}, {<RTRN> ,"TALL"}, {<RWIN>, "TALL"} };
 	};
 	row {
 	    top= 4;

@@ -47,6 +47,9 @@ for geometry in $GEOMETRY_LIST; do
     xkbcomp - - |\
     xkbprint -color -pict all -label symbols -lc $XKBPRINT_LOCALE - - |\
     ps2pdf - > xkb-${geometry_sane}-${keymap_sane}.pdf
+    # also generate a png
+    pdftoppm -png xkb-${geometry_sane}-${keymap_sane}.pdf \
+		> xkb-${geometry_sane}-${keymap_sane}.png
   done
 done
 
