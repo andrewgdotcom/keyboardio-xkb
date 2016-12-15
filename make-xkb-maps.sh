@@ -7,9 +7,9 @@
 #
 IFS=:
 
-# See https://github.com/andrewgdotcom/keyboardio-xkb/ for geometry
+# See https://github.com/andrewgdotcom/keyboardio-xkb/geometry/ for 
 # files that can be used with this script. These files should be copied
-# (or better, soft linked) into /usr/share/X11/xkb/geometry/
+# (or better yet, soft linked!) into /usr/share/X11/xkb/geometry/
 #
 GEOMETRY_LIST="keyboardio:keyboardio-abg"
 
@@ -27,7 +27,7 @@ KEYMAP_LIST="us:us dvorak:gb:fr:se:de:hu:it"
 #
 XKBPRINT_LOCALE=en_IE.ISO-8859-15@euro
 
-for geometry in $GEOMETRY_LIST; do
+for geometry in $GEOMETRY_LIST; do  
   for keymap in $KEYMAP_LIST; do
     # run $keymap through xargs to parse the embedded spaces
     echo $keymap |\
