@@ -22,8 +22,8 @@ populate the keyboardio_vndr directory with geometry files corresponding to
 each variant-layout config file. These are now usable by the system.
 
 To see how linux system keymaps will behave under each firmware layout, edit
-and run the make-xkb-maps.sh script. This will generate PDFs and PNGs of 
-each geometry as it appears under each keymap.
+and run the make-xkb-maps.sh script in a temporary directory. This will 
+generate PDFs and PNGs of each geometry as it appears under each keymap.
 
 Terminology
 -----------
