@@ -1,12 +1,12 @@
 # keyboardio-xkb
 Some Linux XKB files for use with the Keyboardio Model 01
 
-* 01.template: the XKB geometry template for the Keyboardio Model 01
-* layout-variants/: easy config files for layouts to apply to the template
-* keyboardio_vndr: precompiled XKB geometries for use with xkbprint
-* make-geometry-variants.sh: script to generate geometries from the template
-* make-xkb-maps.sh: Generate layout PDFs and PNGs from the geometries
-* xfree86-scancodes: US-ASCII annotated XKB scancode file for reference
+* 01.template - the XKB geometry template for the Keyboardio Model 01
+* layout-variants/ - easy config files for layouts to apply to the template
+* keyboardio_vndr - precompiled XKB geometries for use with xkbprint
+* make-geometry-variants.sh - generates geometries from the template
+* make-xkb-maps.sh - generates layout PDFs and PNGs from the geometries
+* xfree86-scancodes - US-ASCII annotated XKB scancode file for reference
 
 How to use
 ==========
@@ -25,11 +25,43 @@ To see how linux system keymaps will behave under each firmware layout, edit
 and run the make-xkb-maps.sh script. This will generate PDFs and PNGs of 
 each geometry as it appears under each keymap.
 
+Terminology
+-----------
+
+There are so many layers of abstraction involved in HIDs that the terminology
+can get complicated. The following are reasonably standard:
+
+* *geometry* - this is the physical location of the keys on the keyboard.
+	An XKB geometry file contains a vector representation of the keyboard
+	annotated with one or more XKB scancode aliases for each key.
+* *scancode* - each abstraction layer in the stack uses its own scancodes,
+	which are typically single bytes or escape sequences of multiple 
+	bytes. A keyboard may use custom scancodes
+	internally before translating them into USB or PS2 scancodes for
+	transmission across the appropriate peripheral bus. These are
+	then usually standardised by the kernel into an OS-specific scancode 
+	set. In XKB (which is cross-platform), the OS native scancodes are 
+	further standardised into XKB aliases (which unlike native or bus 
+	scancodes are alphanumeric). 
+* *keymap* - this is the user-customisable layer at the top of the stack which
+	allows the scancodes to generate a human-readable letter or event
+	such as "k" or "page down".
+
+I am also defining the following for the purposes of this project:
+
+* *layout* - a mapping (in keyboard firmware) of bus scancodes to physical 
+	keys (strictly, the keyboard native scancode). In this project
+	I am using XKB scancode aliases rather than bus scancodes, however:
+	a) these have a 1:1 mapping (under the majority of circumstances!) 
+	onto bus scancodes such as USB, which is what the Keyboardio Model 01 
+	actually emits, and b) XKB aliases are much more user-friendly to
+	play around with in config files.
+
 Note
 ----
 
-This strictly applies only to linux, but there are few differences between the 
-most common keymaps across OSes, so they will be of general interest.
+This strictly applies only to linux, but there are minimal differences between
+OSes using common keymaps, so they should be of general interest.
 
 If you have a custom keymap that you want me to include, send a pull requests
 or email me at andrewg@andrewg.com.
