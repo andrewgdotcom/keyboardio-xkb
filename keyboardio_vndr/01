@@ -132,11 +132,11 @@ default xkb_geometry "keyboardio" {
 	};
 	row {
 	    left= 17;
-	    keys { <LFSH> };
+	    keys { <LWIN> };
 	};
 	row {
 	    left= 36;
-	    keys { <LALT> };
+	    keys { <LFSH> };
 	};
     }; // End of "LeftMods" section
 
@@ -146,11 +146,11 @@ default xkb_geometry "keyboardio" {
 	angle= -40;
 	row {
 	    left= -55;
-	    keys { <RALT> };
+	    keys { <RTSH> };
 	};
 	row {
 	    left= -36;
-	    keys { <RTSH> };
+	    keys { <RALT> };
 	};
 	row {
 	    left= -17;
