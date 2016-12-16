@@ -1,0 +1,192 @@
+default xkb_geometry "keyboardio" {
+
+    // This is an approximate layout for a Keyboardio Model01 keyboard.
+    // This file is generated from a template using keyboardio-xkb
+    // https://github.com/andrewgdotcom/keyboardio-xkb/
+    
+    // Very crude rendering due to xkb only understanding rectangles.
+    // By andrewg@andrewg.com, based on the Kinesis geometry file.
+
+    description= "Keyboardio Model01";
+    width= 341;
+    height= 210;
+
+    shape.cornerRadius= 1;
+    shape "NORM" { { [ 18,18] }, { [2,1], [16,17] } };
+    shape "WIDE" { { [ 21,18] }, { [2,1], [19,17] } };
+    shape "TALL" { { [ 18,23] }, { [2,1], [16,22] } };
+    shape "PALM" { cornerRadius=10, { [ 22,28 ] }, { [1,1], [21,27] } };
+    shape "EDGE" { cornerRadius=50, { [ 341, 210 ] } };
+
+    outline "Edges" {
+	top= 0;
+	left= 0;
+	shape= "EDGE";
+    };
+
+    row.vertical= True;
+    row.top= 1;
+    key.gap= 0.5;
+
+//--------------------------------------------------------------------//
+
+    section "LeftAlpha" {
+	top=  0;
+	left= 36;
+	angle= 20;
+	row {
+	    top= 12;
+	    left= 5;
+	    keys { <R0C0>, <R1C0>, <R2C0>, <R3C0> };
+	};
+	row {
+	    top= 12;
+	    left= 24;
+	    keys { <R0C1>, <R1C1>, { <R2C1>, color="grey20" }, <R3C1> };
+	};
+	row {
+	    top= 3;
+	    left= 43;
+	    keys { <R0C2>, <R1C2>, { <R2C2>, color="grey20" }, <R3C2> };
+	};
+	row {
+	    top= -1;
+	    left= 62;
+	    keys { <R0C3>, <R1C3>, { <R2C3>, color="grey20" }, <R3C3> };
+	};
+	row {
+	    left= 81;
+	    keys { <R0C4>, <R1C4>, { <R2C4>, color="grey20" }, <R3C4> };
+	};
+	row {
+	    top= 4;
+	    left= 100;
+	    keys { <R0C5>, <R1C5>, <R2C5>, <R3C5> };
+	};
+	row {
+	    top= 14;
+	    left= 119;
+	    keys { {<R0C6> ,"TALL"}, {<R1C6> ,"TALL"}, {<R2C6>, "TALL"} };
+	};
+    }; // End of "LeftAlpha" section
+
+    section "RightAlpha" {
+	top= 41;
+	left= 190;
+	angle= -20;
+	row {
+	    top= 14;
+	    left= -17;
+	    keys { {<R0C9> ,"TALL"}, {<R1C9> ,"TALL"}, {<R2C9>, "TALL"} };
+	};
+	row {
+	    top= 4;
+	    left= 2;
+	    keys { <R0C10>, <R1C10>, <R2C10>, <R3C10> };
+	};
+	row {
+	    left= 21;
+	    keys { <R0C11>, <R1C11>, { <R2C11>, color="grey20" }, <R3C11> };
+	};
+    row {
+	    top= -1;
+	    left= 40;
+	    keys { <R0C12>, <R1C12>, { <R2C12>, color="grey20" }, <R3C12> };
+	};
+	row {
+	    top= 3;
+	    left= 59;
+	    keys { <R0C13>, <R1C13>, { <R2C13>, color="grey20" }, <R3C13> };
+	};
+	row {
+	    top= 12;
+	    left= 78;
+	    keys { <R0C14>, <R1C14>, { <R2C14>, color="grey20" }, <R3C14> };
+	};
+	row {
+	    top= 12;
+	    left= 97;
+	    keys { <R0C15>, <R1C15>, <R2C15>, <R3C15> };
+	};
+	overlay "KPAD" {
+	    <R0C11>=<NMLK>, <R0C12>=<KPEQ>, <R0C13>=<KPSL>, <R0C14>=<KPMU>,
+	    <R1C11>=<KP7>,  <R1C12>=<KP8>,  <R1C13>=<KP9>,  <R1C14>=<KPSU>,
+	    <R2C11>=<KP4>,  <R2C12>=<KP5>, <R2C13>=<KP6>,  <R2C14>=<KPAD>,
+	    <R3C11>=<KP1>,  <R3C12>=<KP2>, <R3C13>=<KP3>,  <R3C14>=<KPEN>
+	};
+    }; // End of "RightAlpha" section
+
+//--------------------------------------------------------------------//
+
+    section "LeftMods" {
+	top= 121;
+	left= 118;
+	angle= 40;
+	row {
+	    left= -21;
+	    keys { <R0C7> };
+	};
+	row {
+	    left= -2;
+	    keys { <R1C7> };
+	};
+	row {
+	    left= 17;
+	    keys { <R2C7> };
+	};
+	row {
+	    left= 36;
+	    keys { <R3C7> };
+	};
+    }; // End of "LeftMods" section
+
+    section "RightMods" {
+	top= 120;
+	left= 222;
+	angle= -40;
+	row {
+	    left= -55;
+	    keys { <R3C8> };
+	};
+	row {
+	    left= -36;
+	    keys { <R2C8> };
+	};
+	row {
+	    left= -17;
+	    keys { <R1C8> };
+	};
+	row {
+	    left= 2;
+	    keys { <R0C8> };
+	};
+	overlay "KPAD" {
+	    <R1C8>= <KP0>, <R0C8>=<KPDL>
+	};
+    }; // End of "RightMods" section
+
+//--------------------------------------------------------------------//
+
+    section "LeftPalm" {
+	top= 161;
+	left= 99;
+	angle= 40;
+	row {
+	    keys { { <R3C6>, "PALM" }  };
+	};
+    }; // End of "LeftPalm" section
+    
+    section "RightPalm" {
+	top= 175;
+	left= 223;
+	angle= -40;
+	row {
+	    keys { { <R3C9>, "PALM" }  };
+	};
+    }; // End of "RightPalm" section
+    
+//--------------------------------------------------------------------//
+
+    alias <AC00> = <CAPS>;
+    alias <AA00> = <LCTL>;
+};
