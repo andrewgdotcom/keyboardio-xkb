@@ -13,7 +13,7 @@ IFS=,
 #
 # sudo ln -s $GIT_PATH/keyboardio_vndr /usr/share/X11/xkb/geometry/
 #
-GEOMETRY_LIST="keyboardio_vndr/01,keyboardio_vndr/01-abg"
+GEOMETRY_LIST="keyboardio_vndr/01-default,keyboardio_vndr/01-abg"
 
 # A list of system XKB keymaps to apply to each geometry. To find a 
 # list of these, run `man xkeyboard-config`. They are listed under

@@ -1,8 +1,8 @@
 default xkb_geometry "keyboardio" {
 
     // This is an approximate layout for a Keyboardio Model01 keyboard.
-    // The scancode arrangement here is as per ABG's proposed default
-    // layer for multilingual use.
+    // This file is generated from a template using keyboardio-xkb
+    // https://github.com/andrewgdotcom/keyboardio-xkb/
     
     // Very crude rendering due to xkb only understanding rectangles.
     // By andrewg@andrewg.com, based on the Kinesis geometry file.
@@ -77,7 +77,7 @@ default xkb_geometry "keyboardio" {
 	row {
 	    top= 14;
 	    left= -17;
-	    keys { {<PROG> ,"TALL"}, {<RTRN> ,"TALL"}, {<RWIN>, "TALL"} };
+	    keys { {<MENU> ,"TALL"}, {<RTRN> ,"TALL"}, {<RWIN>, "TALL"} };
 	};
 	row {
 	    top= 4;
@@ -109,7 +109,7 @@ default xkb_geometry "keyboardio" {
 	    keys { <AE12>, <AD11>, <AC11>, <AD12> };
 	};
 	overlay "KPAD" {
-	    <AE07>=<NMLK>, <AE08>=<KPEQ>, <AE09>=<KPSL>, <AE10>=<KPMU>,
+	    <AE08>=<NMLK>, <AE09>=<KPEQ>, <AE10>=<KPSL>, <AE11>=<KPMU>,
 	    <AD07>=<KP7>,  <AD08>=<KP8>,  <AD09>=<KP9>,  <AD10>=<KPSU>,
 	    <AC07>=<KP4>,  <AC08>=<KP5>, <AC09>=<KP6>,  <AC10>=<KPAD>,
 	    <AB07>=<KP1>,  <AB08>=<KP2>, <AB09>=<KP3>,  <AB10>=<KPEN>
@@ -172,7 +172,7 @@ default xkb_geometry "keyboardio" {
 	left= 99;
 	angle= 40;
 	row {
-	    keys { { <PROG>, "PALM" }  };
+	    keys { { <FN>, "PALM" }  };
 	};
     }; // End of "LeftPalm" section
     
@@ -181,7 +181,7 @@ default xkb_geometry "keyboardio" {
 	left= 223;
 	angle= -40;
 	row {
-	    keys { { <PROG>, "PALM" }  };
+	    keys { { <FN>, "PALM" }  };
 	};
     }; // End of "RightPalm" section
     
