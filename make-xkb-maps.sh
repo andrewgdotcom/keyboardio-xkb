@@ -44,7 +44,7 @@ KEYMAP_LIST="us+dvorak+compose:menu
 us
 gb
 fr
-fr bepo
+fr+bepo
 se
 de
 hu;hu_HU.ISO88592
