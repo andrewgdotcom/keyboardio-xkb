@@ -63,6 +63,6 @@ Note
 This strictly applies only to linux, but there are minimal differences between
 OSes using common keymaps, so they should be of general interest.
 
-If you have a custom keymap that you want me to include, send a pull requests
+If you have a custom layout that you want me to include, send a pull requests
 or email me at andrewg@andrewg.com.
 
