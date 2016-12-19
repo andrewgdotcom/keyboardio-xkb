@@ -13,21 +13,20 @@ GEOMETRY_LIST="keyboardio_vndr/01-default
 keyboardio_vndr/01-abg
 keyboardio_vndr/01-celtic"
 
-# We must supply an ISO-8859-* locale to xkbprint, as it does not
-# understand Unicode. Incant `locale -a` to see what ones you have.
+# Most modern installs use a UTF-8 locale by default, but xkbprint does
+# not understand unicode. We must therefore explicitly configrure an 
+# ISO-8859-* locale. Incant `locale -a` to see what ones you have.
 # If you do not have one, you must generate one:
 #
 # 1) Pick an ISO-8859-* locale in /etc/locale.gen and uncomment it
 # 2) run locale-gen
 #
-# NB1 you also need to have the appropriate fonts installed.
-#
-# NB2 /etc/locale.gen uses " " to separate languages from charsets, but
-#      in most other circumstances (such as here) the separator is "."
+# Note that the locale format is slightly different in /etc/locale.gen
+# Be sure to use the format returned by `locale -a` below
 #
 # In most cases, it is sufficient to set the DEFAULT_LOCALE.
 #
-DEFAULT_LOCALE=en_IE.ISO-8859-15@euro
+DEFAULT_LOCALE=en_IE.ISO885915@euro
 
 # A list of system XKB keymaps to apply to each geometry. To find a 
 # list of these, run `man xkeyboard-config`. They are listed under
@@ -48,7 +47,7 @@ fr
 fr bepo
 se
 de
-hu;hu_HU.ISO-8859-2
+hu;hu_HU.ISO88592
 it"
 
 # OK, let's go for it
