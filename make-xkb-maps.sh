@@ -13,7 +13,7 @@ IFS=,
 #
 # sudo ln -s $GIT_PATH/keyboardio_vndr /usr/share/X11/xkb/geometry/
 #
-GEOMETRY_LIST="keyboardio_vndr/01-default,keyboardio_vndr/01-abg"
+GEOMETRY_LIST="keyboardio_vndr/01-default,keyboardio_vndr/01-abg,keyboardio_vndr/01-celtic"
 
 # A list of system XKB keymaps to apply to each geometry. To find a 
 # list of these, run `man xkeyboard-config`. They are listed under
@@ -23,7 +23,7 @@ GEOMETRY_LIST="keyboardio_vndr/01-default,keyboardio_vndr/01-abg"
 # 
 # "us(dvorak)" with option "compose:menu" -> "us dvorak compose:menu"
 #
-KEYMAP_LIST="us,us dvorak compose:menu,gb,fr,se,de,hu,it"
+KEYMAP_LIST="us,us dvorak compose:menu,gb,fr,fr bepo,se,de,hu,it"
 
 # We need to supply an ISO-8859-* locale for xkbprint, as it does not
 # understand Unicode. Incant `locale -a` to see what ones you have.
