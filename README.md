@@ -47,7 +47,7 @@ can get complicated. The following are reasonably standard:
 	allows the scancodes to generate a human-readable letter or event
 	such as "k" or "page down".
 
-I am also defining the following for the purposes of this project:
+I am also using the following definition for the purposes of this project:
 
 * *layout* - a mapping (in keyboard firmware) of bus scancodes to physical 
 	keys (strictly, the keyboard native scancode). In this project
@@ -57,12 +57,15 @@ I am also defining the following for the purposes of this project:
 	actually emits, and b) XKB aliases are much more user-friendly to
 	play around with in config files.
 
+("Layout" is used inconsistently in other literature to refer to various
+combinations of the above)
+
 Note
 ----
 
 This strictly applies only to linux, but there are minimal differences between
 OSes using common keymaps, so they should be of general interest.
 
-If you have a custom layout that you want me to include, send a pull requests
+If you have a custom layout that you want me to include, send a pull request
 or email me at andrewg@andrewg.com.
 

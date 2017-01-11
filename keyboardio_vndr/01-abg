@@ -37,36 +37,36 @@ default xkb_geometry "keyboardio" {
 	row {
 	    top= 12;
 	    left= 5;
-	    keys { <AE01>, <TLDE>, <BKSL>, <LSGT> };
+	    keys { <NUM>, <TLDE>, <BKSL>, <LSGT> };
 	};
 	row {
 	    top= 12;
 	    left= 24;
-	    keys { <AE02>, <AD01>, { <AC01>, color="grey20" }, <AB01> };
+	    keys { <AE01>, <AD01>, { <AC01>, color="grey20" }, <AB01> };
 	};
 	row {
 	    top= 3;
 	    left= 43;
-	    keys { <AE03>, <AD02>, { <AC02>, color="grey20" }, <AB02> };
+	    keys { <AE02>, <AD02>, { <AC02>, color="grey20" }, <AB02> };
 	};
 	row {
 	    top= -1;
 	    left= 62;
-	    keys { <AE04>, <AD03>, { <AC03>, color="grey20" }, <AB03> };
+	    keys { <AE03>, <AD03>, { <AC03>, color="grey20" }, <AB03> };
 	};
 	row {
 	    left= 81;
-	    keys { <AE05>, <AD04>, { <AC04>, color="grey20" }, <AB04> };
+	    keys { <AE04>, <AD04>, { <AC04>, color="grey20" }, <AB04> };
 	};
 	row {
 	    top= 4;
 	    left= 100;
-	    keys { <AE06>, <AD05>, <AC05>, <AB05> };
+	    keys { <AE05>, <AD05>, <AC05>, <AB05> };
 	};
 	row {
 	    top= 14;
 	    left= 119;
-	    keys { {<PROG> ,"TALL"}, {<TAB> ,"TALL"}, {<ESC>, "TALL"} };
+	    keys { {<LED> ,"TALL"}, {<TAB> ,"TALL"}, {<ESC>, "TALL"} };
 	};
     }; // End of "LeftAlpha" section
 
@@ -77,31 +77,31 @@ default xkb_geometry "keyboardio" {
 	row {
 	    top= 14;
 	    left= -17;
-	    keys { {<MENU> ,"TALL"}, {<RTRN> ,"TALL"}, {<RWIN>, "TALL"} };
+	    keys { {<AE11> ,"TALL"}, {<RTRN> ,"TALL"}, {<RWIN>, "TALL"} };
 	};
 	row {
 	    top= 4;
 	    left= 2;
-	    keys { <AE07>, <AD06>, <AC06>, <AB06> };
+	    keys { <AE06>, <AD06>, <AC06>, <AB06> };
 	};
 	row {
 	    left= 21;
-	    keys { <AE08>, <AD07>, { <AC07>, color="grey20" }, <AB07> };
+	    keys { <AE07>, <AD07>, { <AC07>, color="grey20" }, <AB07> };
 	};
     row {
 	    top= -1;
 	    left= 40;
-	    keys { <AE09>, <AD08>, { <AC08>, color="grey20" }, <AB08> };
+	    keys { <AE08>, <AD08>, { <AC08>, color="grey20" }, <AB08> };
 	};
 	row {
 	    top= 3;
 	    left= 59;
-	    keys { <AE10>, <AD09>, { <AC09>, color="grey20" }, <AB09> };
+	    keys { <AE09>, <AD09>, { <AC09>, color="grey20" }, <AB09> };
 	};
 	row {
 	    top= 12;
 	    left= 78;
-	    keys { <AE11>, <AD10>, { <AC10>, color="grey20" }, <AB10> };
+	    keys { <AE10>, <AD10>, { <AC10>, color="grey20" }, <AB10> };
 	};
 	row {
 	    top= 12;
@@ -109,7 +109,7 @@ default xkb_geometry "keyboardio" {
 	    keys { <AE12>, <AD11>, <AC11>, <AD12> };
 	};
 	overlay "KPAD" {
-	    <AE08>=<NMLK>, <AE09>=<KPEQ>, <AE10>=<KPSL>, <AE11>=<KPMU>,
+	    <AE07>=<NMLK>, <AE08>=<KPEQ>, <AE09>=<KPSL>, <AE10>=<KPMU>,
 	    <AD07>=<KP7>,  <AD08>=<KP8>,  <AD09>=<KP9>,  <AD10>=<KPSU>,
 	    <AC07>=<KP4>,  <AC08>=<KP5>, <AC09>=<KP6>,  <AC10>=<KPAD>,
 	    <AB07>=<KP1>,  <AB08>=<KP2>, <AB09>=<KP3>,  <AB10>=<KPEN>

@@ -37,7 +37,7 @@ default xkb_geometry "keyboardio" {
 	row {
 	    top= 12;
 	    left= 5;
-	    keys { <PROG>, <NUM>, <BKSL>, <LSGT> };
+	    keys { <LED>, <NUM>, <BKSL>, <LSGT> };
 	};
 	row {
 	    top= 12;

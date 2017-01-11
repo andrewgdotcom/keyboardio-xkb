@@ -40,7 +40,7 @@ DEFAULT_LOCALE=en_IE.ISO885915@euro
 # suffix those keymaps with their preferred locale, delimited by a 
 # semicolon.
 #
-KEYMAP_LIST="us+dvorak+compose:menu
+KEYMAP_LIST="us+dvorak
 us
 gb
 fr
@@ -48,6 +48,7 @@ fr+bepo
 se
 de
 hu;hu_HU.ISO88592
+pl+qwertz
 it"
 
 # OK, let's go for it
@@ -61,7 +62,7 @@ for geometry in $GEOMETRY_LIST; do
 	entries=(${pair//;/ })
 	keymap=${entries[0]}
 	XKBPRINT_LOCALE=${entries[1]}
-	if [[ -z $XKBPRINT_LOCALE ]]; then
+	if [[ -z "$XKBPRINT_LOCALE" ]]; then
       XKBPRINT_LOCALE=$DEFAULT_LOCALE
 	fi
 
