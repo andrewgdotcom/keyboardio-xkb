@@ -11,8 +11,38 @@ Some Linux XKB files for use with the Keyboardio Model 01
 How to use
 ==========
 
+Setting up
+----------
+
 git-clone the repository and soft link the subdirectory keyboardio_vndr under
 /usr/share/X11/xkb/geometry/. This contains some prebuilt geometry files.
+
+Making the keymap diagrams
+--------------------------
+
+To see how linux system keymaps will behave under each firmware layout, edit
+the make-xkb-maps.sh script then run it while in a temporary directory. This
+will generate PDFs and PNGs of each geometry as it appears under each keymap.
+
+Most modern installs use a UTF-8 locale by default, but xkbprint does
+not understand unicode. We must therefore explicitly configrure an 
+ISO-8859-* locale. Incant `locale -a` to see what ones you have.
+If you do not have one, you must generate one:
+
+1) Pick an ISO-8859-* locale in /etc/locale.gen and uncomment it
+2) run locale-gen
+
+Note that the locale format returned by `locale -a` is slightly different to
+the format that is configured in /etc/locale.gen
+Be sure to use the format returned by `locale -a` in the make-xkb-layouts.sh 
+script.
+
+In most cases, it is sufficient to set the DEFAULT_LOCALE, but if you are 
+generating layouts for multiple languages you may want to specify the locale
+for each layout specifically. See the comments in the script for details.
+
+Creating your own layout
+------------------------
 
 Now create your own layout in variant-layouts. Use the default as a guide.
 It should be self-explanatory.
@@ -21,9 +51,6 @@ Now run the script make-geometry-variants in the root of the repo. This will
 populate the keyboardio_vndr directory with geometry files corresponding to
 each variant-layout config file. These are now usable by the system.
 
-To see how linux system keymaps will behave under each firmware layout, edit
-and run the make-xkb-maps.sh script in a temporary directory. This will 
-generate PDFs and PNGs of each geometry as it appears under each keymap.
 
 Terminology
 -----------
