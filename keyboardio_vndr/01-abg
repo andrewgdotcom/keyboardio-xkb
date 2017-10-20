@@ -66,7 +66,7 @@ default xkb_geometry "keyboardio" {
 	row {
 	    top= 14;
 	    left= 119;
-	    keys { {<LED> ,"TALL"}, {<TAB> ,"TALL"}, {<ESC>, "TALL"} };
+	    keys { {<MENU> ,"TALL"}, {<TAB> ,"TALL"}, {<ESC>, "TALL"} };
 	};
     }; // End of "LeftAlpha" section
 
