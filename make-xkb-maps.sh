@@ -59,12 +59,13 @@ for geometry in $GEOMETRY_LIST; do
   geometry_sane=$(tr "/" "_" <<<$geometry)
 
   for pair in $KEYMAP_LIST; do
-	entries=(${pair//;/ })
-	keymap=${entries[0]}
-	XKBPRINT_LOCALE=${entries[1]}
-	if [[ -z "$XKBPRINT_LOCALE" ]]; then
+    entries=(${pair//;/ })
+    keymap=${entries[0]}
+    XKBPRINT_LOCALE=${entries[1]}
+    if [[ -z "$XKBPRINT_LOCALE" ]]; then
       XKBPRINT_LOCALE=$DEFAULT_LOCALE
-	fi
+    fi
+    LANG=$XKBPRINT_LOCALE
 
     # run $keymap through xargs to split into words
     echo ${keymap//+/ } |\
