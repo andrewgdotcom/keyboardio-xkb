@@ -2,7 +2,7 @@
 # Some aliases such as "ANY", "FN" and "BFLY" are not defined in 
 # XKB and may produce unexpected results.
 
-LR0="NUM  AE01 AE02 AE03 AE04 AE05 MENU"
+LR0="PROG AE01 AE02 AE03 AE04 AE05 LED"
 LR1="TLDE AD01 AD02 AD03 AD04 AD05 TAB"
 LR2="BKSL AC01 AC02 AC03 AC04 AC05 ESC"
 LR3="LSGT AB01 AB02 AB03 AB04 AB05"
