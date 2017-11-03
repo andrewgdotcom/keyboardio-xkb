@@ -9,9 +9,11 @@
 #
 # sudo ln -s $GIT_PATH/keyboardio_vndr /usr/share/X11/xkb/geometry/
 #
-GEOMETRY_LIST="keyboardio_vndr/01-default
+GEOMETRY_LIST="
+keyboardio_vndr/01-default
 keyboardio_vndr/01-abg
-keyboardio_vndr/01-celtic"
+keyboardio_vndr/01-celtic
+"
 
 # Most modern installs use a UTF-8 locale by default, but xkbprint does
 # not understand unicode. We must therefore explicitly configrure an 
@@ -40,7 +42,8 @@ DEFAULT_LOCALE=en_IE.ISO885915@euro
 # suffix those keymaps with their preferred locale, delimited by a 
 # semicolon.
 #
-KEYMAP_LIST="us+dvorak
+KEYMAP_LIST="
+us+dvorak
 us
 gb
 fr
@@ -49,7 +52,10 @@ se
 de
 hu;hu_HU.ISO88592
 pl+qwertz
-it"
+it
+es
+latam
+"
 
 # OK, let's go for it
 

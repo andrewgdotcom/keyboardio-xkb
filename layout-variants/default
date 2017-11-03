@@ -1,5 +1,5 @@
 # We use XKB scancode aliases - see xfree86-scancodes for a list.
-# Some aliases such as "ANY", "FN" and "BFLY" are not defined in 
+# Some aliases such as "ANY", "FN" and "PROG" are not defined in
 # XKB and may produce unexpected results.
 
 # Jesse's default layout
@@ -12,10 +12,10 @@ LR3="PGDN AB01 AB02 AB03 AB04 AB05"	#
 LTH="LCTL BKSP LWIN LFSH"		# thumb keys, left hand
 LPA="FN"				# palm key, left hand
 
-RR0="ANY  AE06 AE07 AE08 AE09 AE10 NUM"  # number row, right hand
+RR0="ANY  AE06 AE07 AE08 AE09 AE10 NMLK" # number row, right hand
 RR1="RTRN AD06 AD07 AD08 AD09 AD10 AE11" # 
-RR2="BFLY AC06 AC07 AC08 AC09 AC10 AC11" # home row, right hand
+RR2="RALT AC06 AC07 AC08 AC09 AC10 AC11" # home row, right hand
 RR3="     AB06 AB07 AB08 AB09 AB10 AE12" #
                                          
-RTH="RTSH RALT SPCE RCTL"		# thumb keys, right hand
+RTH="RTSH LALT SPCE RCTL"		# thumb keys, right hand
 RPA="FN"                                # palm key, right hand
