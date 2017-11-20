@@ -1,19 +1,36 @@
 #!/bin/bash
 
-# A small script to generate a batch of key layout PDFs for multiple 
+# A small script to generate a batch of key layout PDFs for multiple
 # keymap and geometry combinations.
 
 # See https://github.com/andrewgdotcom/keyboardio-xkb/keyboardio_vndr/
 # for files that can be used with this script. This directory should be
 # soft linked under /usr/share/X11/xkb/geometry/ :
 #
-# sudo ln -s $GIT_PATH/keyboardio_vndr /usr/share/X11/xkb/geometry/
+#   sudo ln -s $GIT_PATH/keyboardio_vndr /usr/share/X11/xkb/geometry/
 #
+# A list of system XKB keymaps to apply to each geometry. To find a
+# list of these, run `man xkeyboard-config`. They are listed under
+# "Layouts" and variants are given in parenthesis. For the purposes of
+# this script, both variants and options are separated from the parent
+# keymap by "+", e.g.
+#
+#   "us(dvorak)" with option "compose:menu" -> "us+dvorak+compose:menu"
+#
+# If we need different locales for different keymaps, then we can
+# suffix those keymaps with their preferred locale, delimited by a
+# semicolon.
+
 GEOMETRY_LIST="
-keyboardio_vndr/01-default
-keyboardio_vndr/01-abg
-keyboardio_vndr/01-celtic
+keyboardio_vndr/01-default:	us gb us+dvorak
+keyboardio_vndr/01-merlin2:	us+dvorak fr fr+bepo se de it hu;hu_HU.ISO88592
+keyboardio_vndr/01-ngetal2:	us gb pl
+keyboardio_vndr/01-latam:	latam
+keyboardio_vndr/01-brazil:	br
+keyboardio_vndr/01-merlin3:	es
 "
+# Japanese not currently working
+#keyboardio_vndr/01-japan:	ja
 
 # Most modern installs use a UTF-8 locale by default, but xkbprint does
 # not understand unicode. We must therefore explicitly configrure an 
@@ -30,36 +47,16 @@ keyboardio_vndr/01-celtic
 #
 DEFAULT_LOCALE=en_IE.ISO885915@euro
 
-# A list of system XKB keymaps to apply to each geometry. To find a 
-# list of these, run `man xkeyboard-config`. They are listed under
-# "Layouts" and variants are given in parenthesis. For the purposes of
-# this script, both variants and options are separated from the parent 
-# keymap by "+", e.g. 
-# 
-# "us(dvorak)" with option "compose:menu" -> "us+dvorak+compose:menu"
-#
-# If we need different locales for different keymaps, then we can 
-# suffix those keymaps with their preferred locale, delimited by a 
-# semicolon.
-#
-KEYMAP_LIST="
-us+dvorak
-us
-gb
-fr
-fr+bepo
-se
-de
-hu;hu_HU.ISO88592
-pl+qwertz
-it
-es
-latam
-"
-
 # OK, let's go for it
 
-for geometry in $GEOMETRY_LIST; do
+IFS_SAVE=$IFS
+IFS="
+"
+for GEOMETRY_ENTRY in $GEOMETRY_LIST; do
+  IFS=$IFS_SAVE
+
+  geometry=${GEOMETRY_ENTRY%:*}
+  KEYMAP_LIST=${GEOMETRY_ENTRY#*:}
   
   # we need a sanitised identifier for generating filenames
   geometry_sane=$(tr "/" "_" <<<$geometry)
