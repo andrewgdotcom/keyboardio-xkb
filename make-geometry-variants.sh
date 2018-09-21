@@ -18,13 +18,13 @@
 # This corresponds to a physical layout:
 
 # Left hand
-# r0c0  r0c1  r0c2  r0c3  r0c4  r0c5  r0c6				# LR0
-# r1c0  r1c1  r1c2  r1c3  r1c4  r1c5  r1c6				# LR1
-# r2c0  r2c1  r2c2  r2c3  r2c4  r2c5  r2c6				# LR2
-# r3c0  r3c1  r3c2  r3c3  r3c4  r3c5      				# LR3
+# r0c0  r0c1  r0c2  r0c3  r0c4  r0c5  r0c6              # LR0
+# r1c0  r1c1  r1c2  r1c3  r1c4  r1c5  r1c6              # LR1
+# r2c0  r2c1  r2c2  r2c3  r2c4  r2c5  r2c6              # LR2
+# r3c0  r3c1  r3c2  r3c3  r3c4  r3c5                    # LR3
 #
-#                           r0c7 r1c7 r2c7 r3c7			# LTH
-#                                     r3c6          	# LPA
+#                           r0c7 r1c7 r2c7 r3c7	        # LTH
+#                                     r3c6              # LPA
 
 #             Right hand								
 #             r0c9  r0c10 r0c11 r0c12 r0c13 r0c14 r0c15 # RR0 
