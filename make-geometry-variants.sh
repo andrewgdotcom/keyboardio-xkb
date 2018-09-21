@@ -35,6 +35,8 @@
 #        r3c8 r2c8 r1c8 r0c8                            # RTH 
 #             r3c9                                      # RPA
 
+mkdir -p keyboardio_vndr
+
 for VARIANT in $(ls layout-variants); do
 
   # in the default case, this loads the default twice. Never mind.
