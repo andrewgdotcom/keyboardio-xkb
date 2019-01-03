@@ -21,19 +21,19 @@
 # suffix those keymaps with their preferred locale, delimited by a
 # semicolon.
 
-GEOMETRY_LIST="
-keyboardio_vndr/01-default:	us gb us+dvorak
-keyboardio_vndr/01-merlin2:	us+dvorak fr fr+bepo se de it hu;hu_HU.ISO88592
-keyboardio_vndr/01-ngetal2:	us gb pl
-keyboardio_vndr/01-latam:	latam
-keyboardio_vndr/01-brazil:	br
-keyboardio_vndr/01-merlin3:	es
-"
+GEOMETRY_LIST=(
+"keyboardio_vndr/01-default:	us gb us+dvorak"
+"keyboardio_vndr/01-merlin2:	us+dvorak fr fr+bepo se de it hu;hu_HU.ISO88592"
+"keyboardio_vndr/01-ngetal2:	us gb pl"
+"keyboardio_vndr/01-latam:	latam"
+"keyboardio_vndr/01-brazil:	br"
+"keyboardio_vndr/01-merlin3:	es"
+)
 # Japanese not currently working
 #keyboardio_vndr/01-japan:	ja
 
 # Most modern installs use a UTF-8 locale by default, but xkbprint does
-# not understand unicode. We must therefore explicitly configrure an 
+# not understand unicode. We must therefore explicitly configrure an
 # ISO-8859-* locale. Incant `locale -a` to see what ones you have.
 # If you do not have one, you must generate one:
 #
@@ -49,15 +49,10 @@ DEFAULT_LOCALE=en_IE.ISO885915@euro
 
 # OK, let's go for it
 
-IFS_SAVE=$IFS
-IFS="
-"
-for GEOMETRY_ENTRY in $GEOMETRY_LIST; do
-  IFS=$IFS_SAVE
-
+for GEOMETRY_ENTRY in "${GEOMETRY_LIST[@]}"; do
   geometry=${GEOMETRY_ENTRY%:*}
   KEYMAP_LIST=${GEOMETRY_ENTRY#*:}
-  
+
   # we need a sanitised identifier for generating filenames
   geometry_sane=$(tr "/" "_" <<<$geometry)
 
@@ -81,4 +76,3 @@ for GEOMETRY_ENTRY in $GEOMETRY_LIST; do
 		> xkb-${geometry_sane}-$keymap.png
   done
 done
-
