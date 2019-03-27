@@ -23,14 +23,14 @@
 
 GEOMETRY_LIST=(
 "keyboardio_vndr/01-default:	us gb us+dvorak"
-"keyboardio_vndr/01-merlin2:	us+dvorak fr fr+bepo se de it hu;hu_HU.ISO88592"
-"keyboardio_vndr/01-ngetal2:	us gb pl"
-"keyboardio_vndr/01-latam:	latam"
-"keyboardio_vndr/01-brazil:	br"
-"keyboardio_vndr/01-merlin3:	es"
+"keyboardio_vndr/01-class1:	us+dvorak fr fr+bepo se de it hu;hu_HU.ISO88592"
+"keyboardio_vndr/01-class2:	us gb pl"
+"keyboardio_vndr/01-class3:	latam"
+"keyboardio_vndr/01-class4:	br"
+"keyboardio_vndr/01-class5:	es"
 )
 # Japanese not currently working
-#keyboardio_vndr/01-japan:	ja
+#keyboardio_vndr/01-class4j:	ja
 
 # Most modern installs use a UTF-8 locale by default, but xkbprint does
 # not understand unicode. We must therefore explicitly configrure an
